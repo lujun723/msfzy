@@ -1,0 +1,32 @@
+[
+
+  {
+    "pkg_name":"man_card",
+    "card_no":1,
+    "a_val":900,
+    "r_val":1086
+  },
+
+  {
+    "pkg_name":"buzz_cmd",
+    "cmd":1
+  },
+
+  {
+    "pkg_name":"led_cmd",
+    "power_level":55,
+    "warning":0
+  },
+
+  {
+    "pkg_name":"key_scan",
+    "key_down":"minus"
+  },
+
+  {
+    "pkg_name":"uhf_card",
+    "uhf_no":1,
+    "card_no":90
+  }
+
+]
