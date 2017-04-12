@@ -14,7 +14,6 @@
 
   {
     "pkg_name":"led_cmd",
-    "power_level":55,
     "warning":0
   },
 
@@ -27,6 +26,11 @@
     "pkg_name":"uhf_card",
     "uhf_no":1,
     "card_no":90
+  },
+
+    {
+    "pkg_name":"battery",
+    "power_level":40
   }
 
 ]
