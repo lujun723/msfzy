@@ -28,9 +28,14 @@
     "card_no":90
   },
 
-    {
+  {
     "pkg_name":"battery",
     "power_level":40
+  },
+
+  {
+    "pkg_name":"card_rcv",
+    "cmd":1
   }
 
 ]
