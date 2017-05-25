@@ -37,8 +37,12 @@ def setup():
     #  the baudrate is set to 57600 and should be the same as the one
     #  specified in the Arduino sketch uploaded to ATmega32U4.
     s = serial.Serial("/dev/ttyS0", 19200)
-    alpha_db = text_read('man_alpha_db.txt')
-    r_db = text_read('man_r_db.txt')
+    alpha_db = text_read('/IoT/msfzy/man_alpha_db.txt')
+    r_db = text_read('/IoT/msfzy/man_r_db.txt')
+    # for test start
+    # print "alpha db is ",alpha_db
+    # print "r db is ",r_db
+    # print "Now Alpha 999 val is ", alpha_db[9]
     MODE_STATE = 0
     SENT_FLAG = 0
     mode_timer()  # 更新本地时间
@@ -47,8 +51,8 @@ def setup():
 
 
 def backup(alpha_date_temp,r_date_temp):
-    man_alpha_read = text_read('man_alpha_db.txt')
-    man_r_read = text_read('man_r_db.txt')
+    man_alpha_read = text_read('/IoT/msfzy/man_alpha_db.txt')
+    man_r_read = text_read('/IoT/msfzy/man_r_db.txt')
     man_alpha_read = map(int, man_alpha_read)
     man_r_read = map(int, man_r_read)
 
@@ -63,10 +67,10 @@ def backup(alpha_date_temp,r_date_temp):
     if alpha_date_temp != man_alpha_read:
         # print "alpha different"
         # 写入数据库
-        text_save(alpha_db, 'man_alpha_db.txt', 'w')
+        text_save(alpha_db, '/IoT/msfzy/man_alpha_db.txt', 'w')
     if r_date_temp != man_r_read:
         # print "r different"
-        text_save(r_db, 'man_r_db.txt', 'w')
+        text_save(r_db, '/IoT/msfzy/man_r_db.txt', 'w')
 
 
 def loop():
@@ -160,6 +164,7 @@ def data_process(data_buf):
             MAN_NO = int(dict_object["card_no"])
 
             # for test start
+            # print "MAN_NO is ", MAN_NO
             # print "Now Station num is ", STATION_NO
             # print "Now Alpha val is ", alpha_db[MAN_NO]
             # print "Now R val is ", r_db[MAN_NO]
